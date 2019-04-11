@@ -27,7 +27,6 @@ def bezier_pts(pts):
     cur[:,2] = cur_z
     return cur_x, cur_y, cur_z, cur
 
-
 def readVertices(fileName):
     vertices = []
     for line in open(fileName, "r"):
@@ -48,7 +47,7 @@ verts = readVertices(file_path)
 verts = np.asarray(verts)
 cur_x, cur_y, cur_z, cur = bezier_pts(verts)
 first_point = (cur_x[0], cur_y[0], cur_z[0])
-last_point = (cur_x[9999], cur_y[9999], cur_z[9999])
+last_point = (cur_x[-1], cur_y[-1], cur_z[-1])
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
